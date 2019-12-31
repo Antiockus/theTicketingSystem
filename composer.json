@@ -1,0 +1,11 @@
+{
+    "name": "antiockus/the-ticketing-system",
+    "description": "Ticketing System",
+    "authors": [
+        {
+            "name": "Tim Squires",
+            "email": "antiockus@gmail.com"
+        }
+    ],
+    "require": {}
+}
