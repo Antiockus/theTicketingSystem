@@ -8,6 +8,8 @@
         }
     ],
     "require": {
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "doctrine/dbal": "^2.10",
+        "symfony/dotenv": "^5.0"
     }
 }
