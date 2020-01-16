@@ -1,3 +1,10 @@
+<?php
+require "vendor/autoload.php";
+
+$loader = new \Twig\Loader\FilesystemLoader('views/');
+$twig = new \Twig\Environment($loader);
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -29,7 +36,7 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
-                        <h2>Title 1</h2>
+                        <h2>The Overseer</h2>
                     </div>
                     <div class="card-body">
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit architecto repellat perspiciatis porro omnis, sed magni quos laborum fuga dolorem explicabo tenetur similique facilis sapiente libero obcaecati neque ipsa. Aut, quas adipisci? Veniam quidem quo sit voluptate! Error cumque aliquam voluptate dicta quam, veniam ab obcaecati, consequatur, officia a fugiat.</p>
@@ -39,7 +46,7 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
-                        <h2>Title 1</h2>
+                        <h2>The Combine</h2>
                     </div>
                     <div class="card-body">
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit architecto repellat perspiciatis porro omnis, sed magni quos laborum fuga dolorem explicabo tenetur similique facilis sapiente libero obcaecati neque ipsa. Aut, quas adipisci? Veniam quidem quo sit voluptate! Error cumque aliquam voluptate dicta quam, veniam ab obcaecati, consequatur, officia a fugiat.</p>
@@ -49,12 +56,22 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
-                        <h2>Title 1</h2>
+                        <h2>Reverence</h2>
                     </div>
                     <div class="card-body">
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit architecto repellat perspiciatis porro omnis, sed magni quos laborum fuga dolorem explicabo tenetur similique facilis sapiente libero obcaecati neque ipsa. Aut, quas adipisci? Veniam quidem quo sit voluptate! Error cumque aliquam voluptate dicta quam, veniam ab obcaecati, consequatur, officia a fugiat.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://unsplash.it/1000" class="img-fluid" alt="">
+            </div>
+            <div class="col-md-6">
+                <h2>The path for humanity</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum odio in, at qui exercitationem alias explicabo distinctio quisquam eligendi quaerat asperiores rem ex porro deserunt aliquid dignissimos ducimus dolorem esse laudantium et. Rerum eligendi, consectetur soluta esse sit optio provident harum tempora quibusdam, id sequi et vero corporis distinctio quas quaerat, quia aliquid! Nobis nam minus dicta enim hic beatae! Fuga quisquam ex perferendis porro fugit, quos id. Officia eum consequatur quidem repellat ea maxime. Maiores corrupti deserunt, exercitationem explicabo ratione consequuntur beatae natus mollitia repellat ut illum quam nam reiciendis nostrum, quos perspiciatis eveniet in. Corrupti provident voluptatum numquam.</p>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex doloribus, omnis similique exercitationem id ut natus ipsam nemo quaerat eius porro non velit impedit tenetur consequatur soluta iure incidunt atque possimus ad quibusdam. Est laboriosam, praesentium laudantium consequatur vero assumenda libero exercitationem perspiciatis tempora eos eligendi sit aspernatur voluptatibus distinctio.</p>
             </div>
         </div>
     </div>
