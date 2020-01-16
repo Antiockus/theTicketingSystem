@@ -72,7 +72,22 @@ require "bootstrap.php";
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex doloribus, omnis similique exercitationem id ut natus ipsam nemo quaerat eius porro non velit impedit tenetur consequatur soluta iure incidunt atque possimus ad quibusdam. Est laboriosam, praesentium laudantium consequatur vero assumenda libero exercitationem perspiciatis tempora eos eligendi sit aspernatur voluptatibus distinctio.</p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <?php
+                $sql = 'SELECT * FROM tickets';
+
+                $stmt = $conn->query($sql);
+                ?>
+                <ul>
+                    <?php while ($row = $stmt->fetch()) {  ?>
+                        <li><?php echo $row['ticket_title']; ?></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
     </div>
+
     <?php require "footer.php"; ?>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

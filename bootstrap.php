@@ -13,10 +13,11 @@ $loader = new FilesystemLoader('views/');
 $twig = new Environment($loader);
 
 $connectionParams = [
-    'dbName' => $_ENV['DB_NAME'],
+    'dbname' => $_ENV['DB_NAME'],
     'user' => $_ENV['DB_USER'],
     'password' => $_ENV['DB_PASS'],
     'host' => $_ENV['DB_HOST'],
+    'port' => $_ENV['DB_PORT'],
     'driver' => 'pdo_mysql'
 ];
 
