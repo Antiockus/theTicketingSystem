@@ -2,9 +2,29 @@
 // require "vendor/autoload.php";
 require "bootstrap.php";
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    $sql = 'SELECT * FROM tickets';
-    $stmt = $conn->query($sql);
-    $tickets = $stmt->fetchAll();
-    echo $twig->render('index.html', ['tickets' => $tickets]);
+$request = $_SERVER['REQUEST_URI'];
+$method = $_SERVER['REQUEST_METHOD'];
+
+if ($method == 'GET') {
+    switch ($request) {
+        case '/':
+            // require __DIR__ . '/views/index.html';
+            echo $twig->render('index.html', []);
+            break;
+        case '':
+            // require __DIR__ . '/views/index.html';
+            echo $twig->render('index.html', []);
+            break;
+        case '/about':
+            // require __DIR__ . '/views/about.html';
+            echo $twig->render('about.html', []);
+
+            break;
+        default:
+            http_response_code(404);
+            // require __DIR__ . '/views/404.html';
+            echo $twig->render('404.html', []);
+            break;
+    }
+} else if ($method == 'POST') {
 }
