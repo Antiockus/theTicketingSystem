@@ -20,6 +20,14 @@ if ($method == 'GET') {
             echo $twig->render('about.html', []);
 
             break;
+        case '/contact':
+            // require __DIR__ . '/views/about.html';
+            echo $twig->render('contact.html', []);
+
+            break;
+        case '/create_client':
+            echo $twig->render('/views/create_client.html', []);
+            break;
         default:
             http_response_code(404);
             // require __DIR__ . '/views/404.html';
