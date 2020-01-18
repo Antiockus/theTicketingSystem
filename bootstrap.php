@@ -22,3 +22,4 @@ $connectionParams = [
 ];
 
 $conn = DriverManager::getConnection($connectionParams);
+$query_builder = $conn->createQueryBuilder();

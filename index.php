@@ -26,7 +26,10 @@ if ($method == 'GET') {
 
             break;
         case '/create_client':
-            echo $twig->render('/views/create_client.html', []);
+            echo $twig->render('create_client.html', []);
+            break;
+        case '/create_ticket':
+            echo $twig->render('create_ticket.html', []);
             break;
         default:
             http_response_code(404);
@@ -34,5 +37,4 @@ if ($method == 'GET') {
             echo $twig->render('404.html', []);
             break;
     }
-} else if ($method == 'POST') {
 }
