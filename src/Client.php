@@ -1,8 +1,11 @@
 <?php
 
-// namespace Antiockus;
+namespace Antiockus;
 
-class Client
+use Antiockus\Model;
+use Doctrine\DBAL\DriverManager;
+
+class Client extends Model
 {
     protected $client_name;
     protected $client_url;
@@ -66,6 +69,21 @@ class Client
 
     public function saveClient()
     {
-        // $db = new DB();
+        $sql = "INSERT INTO CLIENTS ( client_name, client_url, client_description)  VALUES (?,?,?)";
+        $connectionParams = [
+            'dbname' => $_ENV['DB_NAME'],
+            'user' => $_ENV['DB_USER'],
+            'password' => $_ENV['DB_PASS'],
+            'host' => $_ENV['DB_HOST'],
+            'port' => $_ENV['DB_PORT'],
+            'driver' => 'pdo_mysql'
+        ];
+
+        $conn = DriverManager::getConnection($connectionParams);
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1, $_POST['client_name']);
+        $stmt->bindParam(2, $_POST['client_url']);
+        $stmt->bindParam(3, $_POST['client_description']);
+        $stmt->execute();
     }
 }

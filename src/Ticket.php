@@ -1,12 +1,15 @@
 <?php
 
-// namespace Antiockus;
+namespace Antiockus;
 
-class Ticket
+use Antiockus\Model;
+use Doctrine\DBAL\DriverManager;
+
+class Ticket extends Model
 {
-    private $title;
-    private $description;
-    private $status;
+    protected $title;
+    protected $description;
+    protected $status;
 
     public function __construct($title, $description, $status)
     {
@@ -60,5 +63,28 @@ class Ticket
     public function setStatus($status)
     {
         $this->status = $status;
+    }
+
+    public function saveTicket()
+    {
+        $sql = "INSERT INTO TICKETS ( ticket_title, ticket_description, ticket_status)  VALUES (?,?,?)";
+
+
+        $connectionParams = [
+            'dbname' => $_ENV['DB_NAME'],
+            'user' => $_ENV['DB_USER'],
+            'password' => $_ENV['DB_PASS'],
+            'host' => $_ENV['DB_HOST'],
+            'port' => $_ENV['DB_PORT'],
+            'driver' => 'pdo_mysql'
+        ];
+
+        $conn = DriverManager::getConnection($connectionParams);
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(1, $this->title);
+        $stmt->bindParam(2, $this->description);
+        $stmt->bindParam(3, $this->status);
+        $stmt->execute();
     }
 }

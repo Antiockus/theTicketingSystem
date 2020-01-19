@@ -1,5 +1,5 @@
 <?php // Get all the new stuff up and running here. Then include it in the index page. 
-require "vendor/autoload.php";
+require_once __DIR__ . "/vendor/autoload.php";
 
 use Doctrine\DBAL\DriverManager;
 use Symfony\Component\Dotenv\Dotenv;
