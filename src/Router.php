@@ -9,7 +9,7 @@ use Twig\Loader\FilesystemLoader;
 
 class Router
 {
-    public static function get($path)
+    public static function get($path, $funToRun)
     {
         $loader = new FilesystemLoader('views/');
         $twig = new Environment($loader);
@@ -17,7 +17,7 @@ class Router
         if ($path == '/' || '') {
             $path = 'index';
         }
-        echo $twig->render($path . '.html', []);
+        echo $twig->render($path . '.html', ['test' => 'test']);
     }
 
     public static function post($path, $controllerMethod)
