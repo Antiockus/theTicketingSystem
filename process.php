@@ -1,5 +1,5 @@
 <?php
-require_once "vendor/autoload.php";
+//require_once "vendor/autoload.php";
 require_once "bootstrap.php";
 
 use Antiockus\Client;
@@ -15,7 +15,7 @@ if ($_POST['value_type'] == 'ticket') {
         $ticket_title = htmlspecialchars($_POST['ticket_title']);
         $ticket_description = htmlspecialchars($_POST['ticket_description']);
         $ticket_status = $_POST['ticket_status'];
-        $ticket = new Ticket($ticket_title, $ticket_status, $ticket_description);
+        $ticket = new Ticket($ticket_title, $ticket_description, $ticket_status);
 
         $ticket->saveTicket();
         // $sql = "INSERT INTO TICKETS ( ticket_title, ticket_description, ticket_status)  VALUES (?,?,?)";
@@ -36,7 +36,6 @@ if ($_POST['value_type'] == 'ticket') {
     $client_description = htmlspecialchars($_POST['client_description']);
     $client = new Client($client_name, $client_url, $client_description);
     $client->saveClient();
-    
 } else {
     echo "no value type found";
 }

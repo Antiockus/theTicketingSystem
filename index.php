@@ -2,8 +2,13 @@
 // require "vendor/autoload.php";
 require "bootstrap.php";
 
+use Antiockus\Router;
+
 $request = $_SERVER['REQUEST_URI'];
 $method = $_SERVER['REQUEST_METHOD'];
+
+
+Router::get('/',);
 
 if ($method == 'GET') {
     switch ($request) {
