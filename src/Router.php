@@ -15,7 +15,7 @@ class Router
         $twig = new Environment($loader);
 
         if ($path == '/' || '') {
-            $path = 'index.html';
+            $path = 'index';
         }
         echo $twig->render($path . '.html', []);
     }

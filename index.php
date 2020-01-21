@@ -10,9 +10,13 @@ use Antiockus\Router;
 $request = $_SERVER['REQUEST_URI'];
 $method = $_SERVER['REQUEST_METHOD'];
 
-Router::get('/create_client');
+if ($method == 'GET') {
+    Router::get($request);
+}
 
-Router::get('/');
+// Router::get('/create_client');
+
+// Router::get('/');
 
 
 // if ($method == 'GET') {
