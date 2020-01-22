@@ -2,23 +2,28 @@
 
 namespace Antiockus\Controllers;
 
-
-class TicketController
+class HomeController
 {
-
     public $twig;
+
     public function __construct($twig)
     {
         $this->twig = $twig;
     }
+
     public function index()
     {
 
         echo $this->twig->render('index.html', ['test' => 'test']);
+        // echo "testing";
+    }
+    public function about()
+    {
+        echo $this->twig->render('about.html', ['test' => 'test']);
     }
 
-    public function create_view()
+    public function contact()
     {
-        echo $this->twig->render('create_ticket.html', []);
+        echo $this->twig->render('contact.html', []);
     }
 }
