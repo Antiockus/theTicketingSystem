@@ -11,7 +11,26 @@ $request = $_SERVER['REQUEST_URI'];
 $method = $_SERVER['REQUEST_METHOD'];
 
 if ($method == 'GET') {
-    Router::get($request);
+    // Router::get($request);
+    switch ($request) {
+        case '/contact':
+            Router::get($request, 'HomeController@contact');
+            break;
+        case '/about':
+            Router::get($request, 'HomeController@about');
+            break;
+        case '/create_client':
+            Router::get($request, 'ClientController@create_view');
+            break;
+        case '/create_ticket':
+            Router::get($request, 'TicketController@create_view');
+            break;
+        case '/':
+        case '':
+        default:
+            Router::get($request, 'HomeController@index');
+            break;
+    }
 }
 
 // Router::get('/create_client');

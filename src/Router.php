@@ -2,10 +2,10 @@
 
 namespace Antiockus;
 
+// require "../vendor/autoload.php";
+
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
-
-
 
 class Router
 {
@@ -20,9 +20,11 @@ class Router
 
         if ($functionToRun) {
             $controller = explode('@', $functionToRun);
-            var_dump($controller);
         }
-        echo $twig->render($path . '.html', ['test' => 'test']);
+        $classToLoad = 'Antiockus\\controllers\\' . $controller[0];
+        $test1 = new $classToLoad($twig);
+        $functionToCall = $controller[1];
+        return $test1->$functionToCall();
     }
 
     public static function post($path, $controllerMethod)

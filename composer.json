@@ -14,6 +14,15 @@
         "psr-4": {
             "Antiockus\\": "src/"
 
-        }
+        },
+        "classmap": [
+            "src/Client.php",
+            "src/Ticket.php",
+            "src/Router.php",
+            "src/Model.php",
+            "src/controllers/ClientController.php",
+            "src/controllers/TicketController.php",
+            "src/controllers/HomeController.php"
+        ]
     }
 }
