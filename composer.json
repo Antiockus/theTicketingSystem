@@ -22,7 +22,8 @@
             "src/Model.php",
             "src/controllers/ClientController.php",
             "src/controllers/TicketController.php",
-            "src/controllers/HomeController.php"
+            "src/controllers/HomeController.php",
+            "src/Request.php"
         ]
     }
 }
