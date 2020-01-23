@@ -1,5 +1,4 @@
 <?php
-//require_once "vendor/autoload.php";
 require_once "bootstrap.php";
 
 use Antiockus\Client;
@@ -18,14 +17,6 @@ if ($_POST['value_type'] == 'ticket') {
         $ticket = new Ticket($ticket_title, $ticket_description, $ticket_status);
 
         $ticket->saveTicket();
-        // $sql = "INSERT INTO TICKETS ( ticket_title, ticket_description, ticket_status)  VALUES (?,?,?)";
-
-
-        // $stmt = $conn->prepare($sql);
-        // $stmt->bindParam(1, $ticket->getTitle());
-        // $stmt->bindParam(2, $ticket->getDescription());
-        // $stmt->bindParam(3, $ticket->getStatus());
-        // $stmt->execute();
     } catch (PDOException $e) {
         header('Location:/about');
         exit('Error:' . $e->getMessage());
