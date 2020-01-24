@@ -26,4 +26,9 @@ class HomeController
     {
         echo $this->twig->render('contact.html', []);
     }
+
+    public function test()
+    {
+        echo $this->twig->render('test.html', ['color' => session_id()]);
+    }
 }

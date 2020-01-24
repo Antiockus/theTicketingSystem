@@ -13,7 +13,6 @@ class App
     {
 
         if ($request->method == 'GET') {
-            // Router::get($request);
             switch ($request->request) {
                 case '/contact':
                     Router::get($request->request, 'HomeController@contact');
@@ -26,6 +25,9 @@ class App
                     break;
                 case '/create_ticket':
                     Router::get($request->request, 'TicketController@create_view');
+                    break;
+                case '/test':
+                    Router::get($request->request, 'HomeController@test');
                     break;
                 case '/':
                 case '':

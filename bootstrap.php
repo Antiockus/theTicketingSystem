@@ -1,4 +1,5 @@
 <?php // Get all the new stuff up and running here. Then include it in the index page. 
+session_start();
 require_once __DIR__ . "/vendor/autoload.php";
 
 use Doctrine\DBAL\DriverManager;
@@ -23,3 +24,5 @@ $connectionParams = [
 
 $conn = DriverManager::getConnection($connectionParams);
 $query_builder = $conn->createQueryBuilder();
+
+$_SESSION['favorite_color'] = 'red';

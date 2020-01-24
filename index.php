@@ -6,7 +6,6 @@ require "bootstrap.php";
 
 use Antiockus\App;
 use Antiockus\Request;
-use Antiockus\Router;
 
 $req = $_SERVER['REQUEST_URI'];
 $method = $_SERVER['REQUEST_METHOD'];
