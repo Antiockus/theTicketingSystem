@@ -29,6 +29,9 @@ class App
                 case '/test':
                     Router::get($request->request, 'HomeController@test');
                     break;
+                case '/register':
+                    Router::get($request->request, 'UserController@register');
+                    break;
                 case '/':
                 case '':
                 default:
