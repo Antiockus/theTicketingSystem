@@ -31,4 +31,6 @@ class HomeController
     {
         echo $this->twig->render('test.html', ['color' => session_id()]);
     }
+
+
 }

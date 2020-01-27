@@ -32,6 +32,9 @@ class App
                 case '/register':
                     Router::get($request->request, 'UserController@register');
                     break;
+                case '/login':
+                    Router::get($request->request, 'UserController@login');
+                    break;
                 case '/':
                 case '':
                 default:
