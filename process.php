@@ -32,3 +32,4 @@ if ($_POST['value_type'] == 'ticket') {
 }
 
 header('Location:/');
+exit;
