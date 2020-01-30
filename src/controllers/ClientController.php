@@ -13,6 +13,7 @@ class ClientController
 
     public function create_view()
     {
-        echo $this->twig->render('create_client.html', ['session' => $_SESSION['logged_in']]);
+        $session = $_SESSION;
+        echo $this->twig->render('create_client.html', ['session' => $session]);
     }
 }

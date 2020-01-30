@@ -25,5 +25,3 @@ $connectionParams = [
 
 $conn = DriverManager::getConnection($connectionParams);
 $query_builder = $conn->createQueryBuilder();
-
-$_SESSION['logged_in'] = true;

@@ -11,10 +11,13 @@ class App
 
     public function processRequest(Request $request)
     {
+        //needs to return the response
+        $response = '';
         if ($request->method == 'GET') {
             switch ($request->request) {
                 case '/contact':
-                    Router::get($request->request, 'HomeController@contact');
+                    $response = Router::get($request->request, 'HomeController@contact');
+                    return $response;
                     break;
                 case '/about':
                     Router::get($request->request, 'HomeController@about');
