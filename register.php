@@ -23,7 +23,7 @@ $password = $_POST['password'];
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 if (empty($nickname) || empty($email) || empty($password)) {
-    header('Location:/register');
+    $twig->render('register.html', ['errors' => 'All fields must be supplied']);
     exit;
 }
 

@@ -12,6 +12,7 @@ $dotenv->load(__DIR__ . '/.env');
 
 $loader = new FilesystemLoader('views/');
 $twig = new Environment($loader);
+$twig->addGlobal('session', $_SESSION);
 
 $connectionParams = [
     'dbname' => $_ENV['DB_NAME'],
@@ -25,4 +26,4 @@ $connectionParams = [
 $conn = DriverManager::getConnection($connectionParams);
 $query_builder = $conn->createQueryBuilder();
 
-$_SESSION['favorite_color'] = 'red';
+$_SESSION['logged_in'] = true;

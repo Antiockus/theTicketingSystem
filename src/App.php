@@ -11,7 +11,6 @@ class App
 
     public function processRequest(Request $request)
     {
-
         if ($request->method == 'GET') {
             switch ($request->request) {
                 case '/contact':
