@@ -17,32 +17,32 @@ class App
             switch ($request->request) {
                 case '/contact':
                     $response = Router::get($request->request, 'HomeController@contact');
-                    return $response;
                     break;
                 case '/about':
-                    Router::get($request->request, 'HomeController@about');
+                    $response = Router::get($request->request, 'HomeController@about');
                     break;
                 case '/create_client':
-                    Router::get($request->request, 'ClientController@create_view');
+                    $response = Router::get($request->request, 'ClientController@create_view');
                     break;
                 case '/create_ticket':
-                    Router::get($request->request, 'TicketController@create_view');
+                    $response = Router::get($request->request, 'TicketController@create_view');
                     break;
                 case '/test':
-                    Router::get($request->request, 'HomeController@test');
+                    $response = Router::get($request->request, 'HomeController@test');
                     break;
                 case '/register':
-                    Router::get($request->request, 'UserController@register');
+                    $response = Router::get($request->request, 'UserController@register');
                     break;
                 case '/login':
-                    Router::get($request->request, 'UserController@login');
+                    $response = Router::get($request->request, 'UserController@login');
                     break;
                 case '/':
                 case '':
                 default:
-                    Router::get($request->request, 'HomeController@index');
+                    $response = Router::get($request->request, 'HomeController@index');
                     break;
             }
         }
+        echo $response;
     }
 }
