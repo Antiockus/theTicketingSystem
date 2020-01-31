@@ -7,7 +7,7 @@ use Twig\Loader\FilesystemLoader;
 
 class Router
 {
-    public static function get($path, $functionToRun = null)
+    public static function get($path, $functionToRun = null, $args = null)
     {
         $loader = new FilesystemLoader('views/');
         $twig = new Environment($loader);

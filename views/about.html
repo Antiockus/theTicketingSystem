@@ -1,14 +1,12 @@
-   {{
-    include('header.html')
-   }}
+{% extends "layout.html"%}
 
-   <div class="container">
-       <div class="row">
-           <div class="col-md-12">
-               <h1>About</h1>
-               <p>Word of the day: {{ test }}</p>
-           </div>
-       </div>
-   </div>
-
-   {{ include('footer.html')}}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>About</h1>
+            <p>Word of the day: {{ test }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

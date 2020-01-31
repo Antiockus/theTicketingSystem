@@ -1,4 +1,6 @@
-{{ include('header.html')}}
+{% extends "layout.html"%}
+
+{% block content %}
 <div class="container">
     <form class="form" action="../process.php" method="post">
         <fieldset>
@@ -17,4 +19,4 @@
             <input type="submit" name="s" value="Create Client"></fieldset>
     </form>
 </div>
-{{ include('footer.html')}}
+{% endblock%}
