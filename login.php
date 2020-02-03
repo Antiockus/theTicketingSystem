@@ -4,10 +4,13 @@ use Doctrine\DBAL\DriverManager;
 
 require "bootstrap.php";
 
+if (empty($_POST['email'])) {
+    echo 'email required';
+}
+
 $email = $_POST['email'];
 $pass = $_POST['password'];
 
-$sql = 'SELECT * FROM USERS WHERE EMAIL === ?';
 $connectionParams = [
     'dbname' => $_ENV['DB_NAME'],
     'user' => $_ENV['DB_USER'],
@@ -18,11 +21,10 @@ $connectionParams = [
 ];
 
 $conn = DriverManager::getConnection($connectionParams);
-$sql = "SELECT * FROM users WHERE email = '$email' AND password ='$pass'";
-$stmt = $conn->prepare($sql);
-$test = $stmt->execute();
-if ($test) {
-    echo "user exists";
-} else {
-    echo "no user";
+$sql = "SELECT * FROM users";
+$stmt = $conn->query($sql);
+var_dump($stmt->execute());
+
+while ($row  = $stmt->fetch()) {
+    echo $row['nickname'] . '<br>';
 }
