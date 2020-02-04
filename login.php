@@ -6,6 +6,7 @@ require "bootstrap.php";
 
 if (empty($_POST['email'])) {
     echo 'email required';
+    header('Location:/login');
 }
 
 $email = $_POST['email'];
@@ -25,8 +26,8 @@ $sql = "SELECT * FROM users WHERE email ='$email'";
 $stmt = $conn->query($sql);
 if ($row = $stmt->fetch()) {
     if (password_verify($pass, $row['password'])) {
-        $user = new Antiockus\User();
-        var_dump($user);
+        $user = new Antiockus\User($row['id']);
+        echo $_SESSION['user_id'];
     } else {
         echo "incorrect password";
     }
