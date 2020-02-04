@@ -1,5 +1,7 @@
 <?php // Get all the new stuff up and running here. Then include it in the index page. 
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 require_once __DIR__ . "/vendor/autoload.php";
 
 use Doctrine\DBAL\DriverManager;

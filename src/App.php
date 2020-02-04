@@ -36,6 +36,9 @@ class App
                 case '/login':
                     $response = Router::get($request->request, 'UserController@login');
                     break;
+                case '/view_tickets':
+                    $response = Router::get($request->request, 'TicketController@view_user_tickets');
+                    break;
                 case '/':
                 case '':
                 default:

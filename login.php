@@ -27,7 +27,7 @@ $stmt = $conn->query($sql);
 if ($row = $stmt->fetch()) {
     if (password_verify($pass, $row['password'])) {
         $user = new Antiockus\User($row['id']);
-        echo $_SESSION['user_id'];
+        header('Location:/view_tickets');
     } else {
         echo "incorrect password";
     }

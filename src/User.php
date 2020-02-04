@@ -10,7 +10,7 @@ class User
 
     public function __construct($id)
     {
-        $this->isLoggedIn = true;
+        $this->isLoggedIn = $_SESSION['isLoggedIn'] = true;
         $this->id = $_SESSION['user_id'] = $id;
     }
 }

@@ -14,22 +14,22 @@ class HomeController
     public function index()
     {
 
-        return $this->twig->render('index.html', ['test' => 'test']);
+        return $this->twig->render('index.html', ['app' => $_SESSION]);
         // echo "testing";
         // return $request;
     }
     public function about()
     {
-        return $this->twig->render('about.html', ['test' => 'test']);
+        return $this->twig->render('about.html', ['app' => $_SESSION]);
     }
 
     public function contact()
     {
-        return $this->twig->render('contact.html', []);
+        return $this->twig->render('contact.html', ['app' => $_SESSION]);
     }
 
     public function test()
     {
-        return $this->twig->render('test.html', ['color' => session_id()]);
+        return $this->twig->render('test.html', ['app' => $_SESSION]);
     }
 }

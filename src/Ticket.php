@@ -10,12 +10,14 @@ class Ticket extends Model
     protected $title;
     protected $description;
     protected $status;
+    protected $owner_id;
 
     public function __construct($title, $description, $status)
     {
         $this->setTitle($title);
         $this->setStatus($status);
         $this->setDescription($description);
+        $this->owner_id = $_SESSION['user_id'];
     }
     /**
      * @return mixed
@@ -67,7 +69,7 @@ class Ticket extends Model
 
     public function saveTicket()
     {
-        $sql = "INSERT INTO TICKETS ( ticket_title, ticket_description, ticket_status)  VALUES (?,?,?)";
+        $sql = "INSERT INTO TICKETS ( ticket_title, ticket_description, ticket_status, owner_id)  VALUES (?,?,?,?)";
 
 
         $connectionParams = [
@@ -85,6 +87,7 @@ class Ticket extends Model
         $stmt->bindParam(1, $this->title);
         $stmt->bindParam(2, $this->description);
         $stmt->bindParam(3, $this->status);
+        $stmt->bindParam(4, $this->owner_id);
         $stmt->execute();
     }
 }
