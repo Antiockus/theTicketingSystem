@@ -2,7 +2,7 @@
 // require "vendor/autoload.php";
 
 
-require "bootstrap.php";
+require "./bootstrap.php";
 
 use Antiockus\App;
 use Antiockus\Request;
